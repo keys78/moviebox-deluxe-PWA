@@ -1,0 +1,16 @@
+.header {
+  width: 100%;
+  cursor: pointer;
+  position: fixed;
+  background-color: #000000;
+  color: var(--color-neon);
+  box-shadow: 0px 1px 5px rgb(23, 204, 195);
+  z-index: 100;
+}
+
+/* @media (max-width: 1000px) {
+  .header {
+    padding-top: 15px;
+    font-size: 6.4vw;
+  }
+} */

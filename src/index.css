@@ -1,0 +1,85 @@
+/* @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap"); */
+@import "react-alice-carousel/lib/alice-carousel.css";
+@import url('https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap');
+.animation-canvas {
+  background: rgb(0, 0, 0);
+  position: fixed;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999999;
+}
+
+.anime-holder{
+  display: flex;
+  justify-content: center;
+  align-items:center;
+  background: rgb(0, 0, 0);
+  width: 100%;
+  height: 100vh;
+}
+
+
+:root {
+  --color-bg: rgb(5, 18, 22);
+  --color-neon: #00fdff;
+}
+
+.alpha-holder {
+  color: var(--color-neon);
+  font-size: 2.5rem;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  /* border: var(--color-neon) 2px solid; */
+  font-family: 'MonteCarlo', cursive;
+  letter-spacing:0.8rem;
+  font-weight: 700;
+  /* padding: 0.25em 0.5em; */
+  /* border-radius: 0.25em; */
+  /* text-shadow: 0 0 0.1em hsl(0, 0%, 100%), 0 0 0.5em currentColor; */
+  /* box-shadow: inset 0 0 0.5em 0 var(--color-neon), 0 0 0.5em 0 var(--color-neon); */
+  position: relative;
+  text-align: center;
+  transition: background 100ms linear;
+}
+.alpha-holder::before {
+  content: "";
+  pointer-events: none;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  top: 140%;
+  left: 0;
+  background: var(--color-neon);
+  transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
+  filter: blur(1em);
+  opacity: 0.6;
+}
+.alpha-holder::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  box-shadow: 0 0 2em 0.5em var(--color-neon);
+  transition: opacity 100ms linear;
+  opacity: 0;
+  -webkit-transition: opacity 100ms linear;
+  -moz-transition: opacity 100ms linear;
+  -ms-transition: opacity 100ms linear;
+  -o-transition: opacity 100ms linear;
+}
+.alpha-holder:hover {
+  background: var(--color-neon);
+  color: var(--color-bg);
+  text-shadow: 0;
+}
+.alpha-holder:hover::before {
+  opacity: 1;
+}
+.alpha-holder:hover::after {
+  opacity: 1;
+}
