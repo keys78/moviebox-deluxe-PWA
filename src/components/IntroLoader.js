@@ -1,25 +1,26 @@
 import React, { useEffect, useState } from 'react'
 import { useHistory } from 'react-router'
 import { motion, AnimatePresence } from 'framer-motion'
+import { pageAnimation } from '../animations'
 
 const IntroLoader = () => {
     const [readyAnime, setReadyAnime] = useState(true)
     const history = useHistory()
 
     useEffect(() => {
-        setTimeout(() => {setReadyAnime(!readyAnime)}, 4000)
-        setTimeout(() => {history.push("/all")}, 5000)
+        setTimeout(() => { setReadyAnime(!readyAnime) }, 4000)
+        setTimeout(() => { history.push("/all") }, 5000)
         // eslint - disable - next - line
     }, [])
 
     const letters = [
-        { alpha: "M",},
-        { alpha: "O",},
-        { alpha: "V",},
-        { alpha: "I",},
-        { alpha: "E",},
-        { alpha: "B",},
-        { alpha: "0",},
+        { alpha: "M", },
+        { alpha: "O", },
+        { alpha: "V", },
+        { alpha: "I", },
+        { alpha: "E", },
+        { alpha: "B", },
+        { alpha: "0", },
         { alpha: "X." }
     ]
 
@@ -44,14 +45,19 @@ const IntroLoader = () => {
     ))
 
     return (
-        <div className="animation-canvas">
+        <motion.div
+            variants={pageAnimation}
+            initial="hidden"
+            animate="visible"
+            exit="exit"
+            className="animation-canvas">
             <div className="anime-holder" >
                 {renderAnimation}
                 {/* <div class="container">
                     <a href="#" class="neon_btn">Hello</a>
                 </div> */}
             </div>
-        </div>
+        </motion.div>
     )
 }
 
