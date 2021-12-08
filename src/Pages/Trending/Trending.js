@@ -31,7 +31,7 @@ const Trending = () => {
       animate="visible"
       exit="exit"
     >
-      <span className="pageTitle">Trending Today</span>
+      <span className="pageTitle">Trending Today.</span>
       <div className="trending">
         {content &&
           content.map((c, i) => (
